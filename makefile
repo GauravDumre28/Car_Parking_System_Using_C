@@ -1,8 +1,5 @@
 ##############################################################
-# MakeFile For Multiple Folders,
-# source - Source Files
-# object - Object File
-# header - Header File
+		## MakeFile ##
 ##############################################################
 
 
