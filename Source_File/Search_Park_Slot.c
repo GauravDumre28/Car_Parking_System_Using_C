@@ -17,11 +17,9 @@ NODE *search_park_slot(int **park_array, NODE *parking_details)
     NODE *temp_ptr = parking_details;
 
     // Loop to Search Car
-    while (1 != flag)
-    {
+    while(1 != flag) {
         // Condition to Limit Invalid User Input
-        if(3 == error)
-        {
+        if(3 == error) {
             return NULL;
         }
 
@@ -32,74 +30,55 @@ NODE *search_park_slot(int **park_array, NODE *parking_details)
 
         // Taking Input for Floor Number
         print("\nEnter Floor Number: ");
-        if(FAIL == input_integer(&floor_var)) 
-        {
-            print("\n\n--> Error: Search Floor Number Input");
+        if(FAIL == input_integer(&floor_var)) {
+            print("\n--> Error: Search Floor Number Input");
             error++;
         }
         
         // Condition to Validate Floor Number
-        if(!((0 < floor_var) && (floors >= floor_var)))
-        {
+        if(!((0 < floor_var) && (floors >= floor_var))) {
             error++;
-            print("\n\n--> Invalid Floor Number\n");
-        }
-        else
-        {
+            print("\n--> Invalid Floor Number\n");
+        } else {
             // Taking Input for Slot Number
-            do
-            {
+            do {
                 // Condition to Limit Invalid User Input
-                if(3 == error)
-                {
+                if(3 == error) {
                     break;
                 }
 
+                // Taking Input for Slot Number
                 print("\nEnter Slot Number: ");
-                if(FAIL == input_integer(&slot_var)) 
-                {
-                    print("\n\n--> Error: Search Slot Number Input");
+                if(FAIL == input_integer(&slot_var)) {
+                    print("\n--> Error: Search Slot Number Input");
                     error++;
                 }
                 
-                if(!((0 < slot_var) && (parking >= slot_var)))
-                {
+                // Condition to Validate Slot Number
+                if(!((0 < slot_var) && (parking >= slot_var))) {
                     error++;
-                    print("\n\n--> Invalid Slot Number\n");
-                }
-                else
-                {
+                    print("\n--> Invalid Slot Number\n");
+                } else {
                     if((1 == *(*(park_array + (floor_var - 1)) + slot_var - 1))
-                        && (NULL != parking_details)) 
-                    {
-                        do
-                        {
+                        && (NULL != parking_details)) {
+                        do {
                             if((floor_var == temp_ptr->floor_num) && 
-                                (slot_var == temp_ptr->slot_num))
-                                {
+                                (slot_var == temp_ptr->slot_num)) {
                                     flag = 1;
                                     break;
                                 }    
                             temp_ptr = temp_ptr->next;
-                        }while(parking_details != temp_ptr);
+                        } while(parking_details != temp_ptr);
 
-                        if(1 == flag)
-                        {
-                            print("\n\n-- Car Details --");
-                            print("\n\tFloor Number: %d", temp_ptr->floor_num);
-                            print("\n\tSlot Number: %d", temp_ptr->slot_num);
-                            print("\n\tDriver Name: %s", 
-                                temp_ptr->driver_name);
-                            print("\tVehicle Number: %s", 
-                                temp_ptr->vehicle_num);
+                        if(1 == flag) {
+                            print("\n\t-- Car Details --");
+                            print_car_details(temp_ptr);
                         }
-                    }
-                    else
-                    {
+                    } else {
                         return NULL;
                     }
                 }
-            }while(1 != flag);
+            } while(1 != flag);
         }       
     }
 

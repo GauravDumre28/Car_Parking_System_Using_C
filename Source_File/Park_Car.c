@@ -13,14 +13,11 @@ NODE *park_car(int **park_array, NODE *head)
     NODE *temp_ptr = NULL;
 
     // Condition to Insert Node
-    if(NULL == head)
-    {
+    if(NULL == head) {
         head = new_ptr;
         head->prev = new_ptr;
         head->next = new_ptr;
-    }
-    else
-    {
+    } else {
         temp_ptr = head->prev;
         new_ptr->prev = temp_ptr;
         new_ptr->next = temp_ptr->next;
@@ -29,11 +26,9 @@ NODE *park_car(int **park_array, NODE *head)
     }
     
     // Calling Function to Insert Parking Details
-    if(FAIL == parking_details(park_array, new_ptr))
-    {
+    if(FAIL == parking_details(park_array, new_ptr)) {
         print("\n\nError: Unable to Insert Record Details\n");
-        if(NULL == delete_record(new_ptr))
-        {
+        if(NULL == delete_record(new_ptr)) {
             head = NULL;
         }
     }

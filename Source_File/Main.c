@@ -2,7 +2,9 @@
 
 int main()
 {
-    print("\n---- Car Parking System ----\n\n");
+    print("\n\n----------------------------------------");
+    print("\n\t-- Car Parking System --\n");
+    print("----------------------------------------\n");
 
     // Declaring Variables
     int **park_array = NULL;
@@ -13,35 +15,30 @@ int main()
     
     // Calling Function to Create Array with Default Value -AND-
     // Condition to Check Array is Dynamically Allocated or Not
-    if(NULL == (park_array = car_parking_array()))
-    {
+    if(NULL == (park_array = car_parking_array())) {
         goto EXIT;
     }
     
     // Calling Function to Print Array
     print("\n-- Parking Summary --");
     print_array(park_array);
-    print("\n----------------------------------------\n");
+    print("----------------------------------------\n");
 
     // Calling Function to Manage User Interaction
-    if(FAIL == switch_case(park_array, parking_details))
-    {
-        print("\n\n-- Invalid Choice Limit Exceeds --\n");
-    }
-    else
-    {
-        print("\n\n-- Execution Completed --\n");
+    if(FAIL == switch_case(park_array, parking_details)) {
+        print("\n-- Invalid Choice Limit Exceeds --\n");
+    } else {
+        print("\n-- Execution Terminated --\n");
     }
     
     // Calling Function to Free Dynamically Allocated Memory for Array
     free_park_array(park_array);
 
     // Calling Function to Free Dynamically Allocated Memory for Records
-    while(NULL != parking_details)
-    {
+    while (NULL != parking_details) {
         parking_details = delete_record(parking_details);
     }
-    print("\n\n-- Parking Record Memory is Free --\n");
+    print("\n-- Parking Record Memory is Free --\n");
     
     EXIT:
     print("\n----------------------------------------\n");

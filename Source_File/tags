@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+car_parking_array	Creating_CP_Array.c	/^int **car_parking_array()$/;"	f
+delete_record	Delete_Records.c	/^NODE *delete_record(NODE *head)$/;"	f
+depart_car	Depart_Car.c	/^NODE *depart_car(int **park_array, NODE *parking_details)$/;"	f
+display_records	Display_Records.c	/^NODE *display_records(NODE *head)$/;"	f
+free_park_array	Free_Array.c	/^void free_park_array(int **board) $/;"	f
+input_integer	Input_Integer.c	/^int input_integer(unsigned int *number)$/;"	f
+main	Main.c	/^int main()$/;"	f
+park_car	Park_Car.c	/^NODE *park_car(int **park_array, NODE *head)$/;"	f
+parking_details	Parking_Details.c	/^int parking_details(int **park_array, NODE *node_ptr)$/;"	f
+print_array	Print_Array.c	/^void print_array(int **park_array) $/;"	f
+search_car	Search_Car.c	/^NODE *search_car(int **park_array, NODE *parking_details)$/;"	f
+search_park_slot	Search_Park_Slot.c	/^NODE *search_park_slot(int **park_array, NODE *parking_details)$/;"	f
+search_vehicle_number	Search_Vehicle_Num.c	/^NODE *search_vehicle_number(int **park_array, NODE *parking_details)$/;"	f
+slot_availability	Slot_Availability.c	/^int slot_availability(int **park_array, NODE *node_ptr)$/;"	f
+str_to_int	String_to_Int_Conv.c	/^int str_to_int(char *string, unsigned int *number)$/;"	f
+switch_case	Switch_Case.c	/^int switch_case(int **park_array, NODE *parking_details)$/;"	f

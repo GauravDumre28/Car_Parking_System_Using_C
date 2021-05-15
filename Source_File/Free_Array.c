@@ -15,5 +15,5 @@ void free_park_array(int **board)
      // Eventually Free the Memory of the Pointers to the Rows
      free(board);
 
-     print("\n\n-- Park Array Memory is Free --\n");
+     print("\n-- Park Array Memory is Free --\n");
 }

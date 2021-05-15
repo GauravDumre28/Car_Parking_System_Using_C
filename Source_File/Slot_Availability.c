@@ -12,8 +12,7 @@ int slot_availability(int **park_array, NODE *node_ptr)
     
     // print("\n\nRow: %d\nCol: %d\n", row, col);
 
-    if(0 == *(*(park_array + row) + col))
-    {
+    if(0 == *(*(park_array + row) + col)) {
         return SUCCESS;
     }
     

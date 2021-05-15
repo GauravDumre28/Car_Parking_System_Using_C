@@ -1,21 +1,20 @@
-/* File Contains Function to Delete All Records */
+/* File Contains Function to Delete All Records 
+ *  Returns: Array Pointer 
+ */
+
 #include"Header_File.h"
 
 NODE *delete_record(NODE *head)
 {
     // Condition to Check Head Pointer
-    if(NULL != head)
-    {
+    if(NULL != head) {
         // Creating Temporary Pointer
         NODE *temp_ptr = head;
 
-        // Condition to Check Number of Nodes
-        if(head == temp_ptr->next)
-        {
+        // Condition to Swap Nodes
+        if((head == temp_ptr->prev) && (head == temp_ptr->next)) {
             head = NULL;
-        }
-        else
-        {
+        } else {
             temp_ptr->next->prev = temp_ptr->prev;
             temp_ptr->prev->next = temp_ptr->next;
             head = temp_ptr->next;

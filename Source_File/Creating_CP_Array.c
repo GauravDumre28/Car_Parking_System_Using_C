@@ -14,75 +14,61 @@ int **car_parking_array()
     int flag = 0;
 
     // Loop to Manage User Interaction
-    do
-    {
+    do {
         // Condition to Verify Invalid User Input
-        if(3 == error)
-        {
+        if(3 == error) {
             return NULL;
         }
         
-        // Taking Input for Number of Floors
+        // Taking Input for Number of Parking Floors
         print("\nEnter Number of Floors: ");
-        if(SUCCESS == input_integer(&floors)) 
-        {
+        if(SUCCESS == input_integer(&floors)) {
             // print("\nFloors: %d", floors);
 
-            do
-            {
-                // Taking Input for Number of Parkings
-                print("\nEnter Number of Parkings Per Floor: ");
-                if(SUCCESS == input_integer(&parking)) 
-                { 
+            do {
+                // Taking Input for Number of Parking Slots
+                print("\nEnter Number of Parkings Slots Per Floor: ");
+                if(SUCCESS == input_integer(&parking)) { 
                     // print("\nParking: %d", parking);
 
                     // Dynamically Allocating Rows (Floors) to Array
                     board = (int **)malloc(floors * sizeof(int *));
 
                     // Condition to Check Dynamic Allocation of Array
-                    if(NULL == board)
-                    {
+                    if(NULL == board) {
                         return NULL;
                     }
 
                     // Loop to Dynamically Allocate Parkings Slots to Array
-                    for(row = 0; row < floors; row++) 
-                    {
+                    for(row = 0; row < floors; row++) {
                         board[row] = (int *)malloc(parking * sizeof(int));
 
                         // Condition to Check Dynamic Allocation of Array
-                        if(NULL == board[row])
-                        {
+                        if(NULL == board[row]) {
                             return NULL;
                         }
                     }
 
                     // Assigning Default Value '0' to Array
-                    for(row = 0; row < floors; row++)
-                    {
-                        for (col = 0; col < parking; col++)
-                        {
+                    for(row = 0; row < floors; row++) {
+                        for(col = 0; col < parking; col++) {
                             *(board[row] + col) = 0;
                         }
                     }
-                    **board = 1;    // Evaluated as *(*(board + 0) + 0) = 1;
+                    // **board = 1;    // Evaluated as *(*(board + 0) + 0) = 1;
                     flag = 1;
-                }
-                else
-                {
-                    print("\n\n--> Error: Number of Parkings Input\n");
+                } else {
+                    print("\n--> Error: Number of Parkings Input\n");
                     error++;
                     parking = 0;
                 }
-            }while(1 != flag);
-        }
-        else
-        {
-            print("\n\n--> Error: Number of Floors Input\n");
+            } while(1 != flag);
+        } else {
+            print("\n--> Error: Number of Floors Input\n");
             error++;
             floors = 0;
         }
-    }while(1 != flag);
+    } while(1 != flag);
 
     return board;
 }

@@ -67,4 +67,7 @@ NODE *search_park_slot(int **, NODE *);
 NODE *search_vehicle_number(int **, NODE *);
 
 // Function to Move Out Parked Car
-NODE *depart_car(int **, NODE *);
+NODE *deport_car(int **, NODE *);
+
+// Function to Print Car Details 
+void print_car_details (NODE *);

@@ -10,18 +10,15 @@ void print_array(int **park_array)
     int count = 0;
 
     printf("\n\n");
-    print("Slots:\t");
-    while(count != parking)
-    {
+    print("Details\t");
+    while(count != parking) {
         printf("\t-%d-", ++count);
     }
     printf("\n");
 
-    for(row = 0; row < floors; row++)
-    {
+    for(row = 0; row < floors; row++) {
         print("Floor %d:", row + 1);
-        for (col = 0; col < parking; col++)
-        {
+        for (col = 0; col < parking; col++) {
             printf("\t %d", *(*(park_array + row) + col));
         }
         printf("\n");
